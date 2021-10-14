@@ -16,6 +16,10 @@ import WeatherScreen from './screens/Weather';
 import RefreshingImageList from './screens/RefreshingImageList';
 import SQLiteScreen from './screens/SQLite';
 import SQLite2Screen from './screens/SQLite2';
+import Contatore2 from './screens/Contatore2';
+
+import { CounterProvider } from './counter-context';
+
 import { Ionicons } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
@@ -45,86 +49,93 @@ function LogoTitle() {
 
 function HomeStack() {
   return (
-    <Stack.Navigator
-      initialRouteName="Home"
-      screenOptions={{
-        headerStyle: {
-          backgroundColor: 'blue',
-        },
-        headerTintColor: 'white',
-        headerTitleStyle: {
-          fontWeight: 'bold',
-          fontSize: 24,
-        },
-      }}
-    >
-      <Stack.Screen
-        name="Home"
-        component={Home}
-        options={{
+    <CounterProvider>
+      <Stack.Navigator
+        initialRouteName="Home"
+        screenOptions={{
           headerStyle: {
             backgroundColor: 'blue',
           },
           headerTintColor: 'white',
-          headerTitle: () => <LogoTitle />,
+          headerTitleStyle: {
+            fontWeight: 'bold',
+            fontSize: 24,
+          },
         }}
-      />
-      <Stack.Screen
-        name="Details"
-        component={DetailsScreen}
-        initialParams={{ id: 42 }}
-        options={{
-          headerRight: () => (
-            <Button title="Info" onPress={() => alert('OK')} />
-          ),
-        }}
-      />
-      <Stack.Screen
-        name="ImageScreen"
-        component={ImageScreen}
-        options={{ title: 'Image Examples' }}
-      />
-      <Stack.Screen
-        name="Contatore"
-        component={Contatore}
-        options={{ title: 'Contatore' }}
-      />
-      <Stack.Screen
-        name="ScrollListScreen"
-        component={ScrollListScreen}
-        options={{ title: 'Lista di immagini' }}
-      />
-      <Stack.Screen
-        name="ImageListFromNetwork"
-        component={ImageListFromNetwork}
-        options={{ title: 'Elenco di immagini da rete' }}
-      />
-      <Stack.Screen
-        name="RefreshingImageList"
-        component={RefreshingImageList}
-        options={{ title: 'Elenco immagini con refresh da rete' }}
-      />
-      <Stack.Screen
-        name="InputForm"
-        component={InputForm}
-        options={{ title: 'Input Form' }}
-      />
-      <Stack.Screen
-        name="Weather"
-        component={WeatherScreen}
-        options={{ title: 'Weather App' }}
-      />
-      <Stack.Screen
-        name="SQLite"
-        component={SQLiteScreen}
-        options={{ title: 'SQLite example' }}
-      />
-      <Stack.Screen
-        name="SQLite2"
-        component={SQLite2Screen}
-        options={{ title: 'SQLite 2 simple' }}
-      />
-    </Stack.Navigator>
+      >
+        <Stack.Screen
+          name="Home"
+          component={Home}
+          options={{
+            headerStyle: {
+              backgroundColor: 'blue',
+            },
+            headerTintColor: 'white',
+            headerTitle: () => <LogoTitle />,
+          }}
+        />
+        <Stack.Screen
+          name="Details"
+          component={DetailsScreen}
+          initialParams={{ id: 42 }}
+          options={{
+            headerRight: () => (
+              <Button title="Info" onPress={() => alert('OK')} />
+            ),
+          }}
+        />
+        <Stack.Screen
+          name="ImageScreen"
+          component={ImageScreen}
+          options={{ title: 'Image Examples' }}
+        />
+        <Stack.Screen
+          name="Contatore"
+          component={Contatore}
+          options={{ title: 'Contatore' }}
+        />
+        <Stack.Screen
+          name="ScrollListScreen"
+          component={ScrollListScreen}
+          options={{ title: 'Lista di immagini' }}
+        />
+        <Stack.Screen
+          name="ImageListFromNetwork"
+          component={ImageListFromNetwork}
+          options={{ title: 'Elenco di immagini da rete' }}
+        />
+        <Stack.Screen
+          name="RefreshingImageList"
+          component={RefreshingImageList}
+          options={{ title: 'Elenco immagini con refresh da rete' }}
+        />
+        <Stack.Screen
+          name="InputForm"
+          component={InputForm}
+          options={{ title: 'Input Form' }}
+        />
+        <Stack.Screen
+          name="Weather"
+          component={WeatherScreen}
+          options={{ title: 'Weather App' }}
+        />
+        <Stack.Screen
+          name="SQLite"
+          component={SQLiteScreen}
+          options={{ title: 'SQLite example' }}
+        />
+        <Stack.Screen
+          name="SQLite2"
+          component={SQLite2Screen}
+          options={{ title: 'SQLite 2 simple' }}
+        />
+        <Stack.Screen
+          name="Contatore2"
+          component={Contatore2}
+          options={{ title: 'Contatore con Context' }}
+        />
+      </Stack.Navigator>
+    </CounterProvider>
   );
 }
 

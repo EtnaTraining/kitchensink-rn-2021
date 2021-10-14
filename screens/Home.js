@@ -21,6 +21,7 @@ const samples = [
   { title: 'Weather App', route: 'Weather' },
   { title: 'Esempio SQLite', route: 'SQLite' },
   { title: 'Simple SQLite', route: 'SQLite2' },
+  { title: 'Contantore con Context', route: 'Contatore2' },
 ];
 
 // export default function Home(props) {

@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { View, Button, Text } from 'react-native';
+import { CounterContext } from '../counter-context';
 
 function DetailsScreen({ navigation, route }) {
   const [cognome, setCognome] = useState('Falsaperla');
+  const { count } = React.useContext(CounterContext);
   console.log(route);
   const { id, name } = route.params;
 
@@ -22,6 +24,7 @@ function DetailsScreen({ navigation, route }) {
       <Text>Name: {name}</Text>
       <Text>Cognome: {cognome}</Text>
       <Text>Details Screen</Text>
+      <Text>Contatore: {count}</Text>
       <Button
         title="Go to Details... again"
         onPress={() =>
