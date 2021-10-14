@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, { useCallback } from 'react';
 import {
   Button,
   FlatList,
@@ -11,6 +11,7 @@ import {
 import Row from '../components/Row';
 
 const samples = [
+  { title: 'Dettagli', route: 'Details', extraData: { id: 43, name: 'Pippo' } },
   { title: 'Gestione immagini', route: 'ImageScreen' },
   { title: 'Contatore', route: 'Contatore' },
   { title: 'ScrollList', route: 'ScrollListScreen' },
@@ -44,7 +45,10 @@ const samples = [
 export default function Home({ navigation }) {
   // const navigation = props.navigation;
   const _renderRow = ({ item }) => (
-    <Row text={item.title} onPress={() => navigation.navigate(item.route)} />
+    <Row
+      text={item.title}
+      onPress={() => navigation.navigate(item.route, item.extraData)}
+    />
   );
   return (
     <FlatList
