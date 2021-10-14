@@ -20,6 +20,7 @@ const samples = [
   { title: 'Form Sample', route: 'InputForm' },
   { title: 'Weather App', route: 'Weather' },
   { title: 'Esempio SQLite', route: 'SQLite' },
+  { title: 'Simple SQLite', route: 'SQLite2' },
 ];
 
 // export default function Home(props) {

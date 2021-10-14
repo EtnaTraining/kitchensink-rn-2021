@@ -15,6 +15,7 @@ import InputForm from './screens/FormScreen';
 import WeatherScreen from './screens/Weather';
 import RefreshingImageList from './screens/RefreshingImageList';
 import SQLiteScreen from './screens/SQLite';
+import SQLite2Screen from './screens/SQLite2';
 import { Ionicons } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
@@ -117,6 +118,11 @@ function HomeStack() {
         name="SQLite"
         component={SQLiteScreen}
         options={{ title: 'SQLite example' }}
+      />
+      <Stack.Screen
+        name="SQLite2"
+        component={SQLite2Screen}
+        options={{ title: 'SQLite 2 simple' }}
       />
     </Stack.Navigator>
   );

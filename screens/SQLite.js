@@ -12,11 +12,6 @@ import {
 import Constants from 'expo-constants';
 import * as SQLite from 'expo-sqlite';
 
-function openDatabase() {
-  const db = SQLite.openDatabase('db.db');
-  return db;
-}
-
 const db = SQLite.openDatabase('db.db');
 
 function Items({ done: doneHeading, onPressItem }) {
