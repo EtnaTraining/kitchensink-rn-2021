@@ -19,6 +19,7 @@ const samples = [
   { title: 'Elenco Immagini con refresh', route: 'RefreshingImageList' },
   { title: 'Form Sample', route: 'InputForm' },
   { title: 'Weather App', route: 'Weather' },
+  { title: 'Esempio SQLite', route: 'SQLite' },
 ];
 
 // export default function Home(props) {

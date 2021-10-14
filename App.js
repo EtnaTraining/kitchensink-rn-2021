@@ -14,6 +14,7 @@ import ImageListFromNetwork from './screens/ImageListFromNetwork';
 import InputForm from './screens/FormScreen';
 import WeatherScreen from './screens/Weather';
 import RefreshingImageList from './screens/RefreshingImageList';
+import SQLiteScreen from './screens/SQLite';
 import { Ionicons } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
@@ -112,6 +113,11 @@ function HomeStack() {
         component={WeatherScreen}
         options={{ title: 'Weather App' }}
       />
+      <Stack.Screen
+        name="SQLite"
+        component={SQLiteScreen}
+        options={{ title: 'SQLite example' }}
+      />
     </Stack.Navigator>
   );
 }
@@ -123,7 +129,7 @@ function App() {
         screenOptions={({ route }) => ({
           tabBarIcon: ({ focused, color, size }) => {
             let iconName;
-            console.log(route.name);
+            // console.log('tab focused', route.name);
 
             if (route.name === 'HomeStack') {
               iconName = focused ? 'home' : 'home-outline';
